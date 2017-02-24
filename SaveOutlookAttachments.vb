@@ -1,3 +1,9 @@
+' Copy and paste the code from this page into your ThisOutlookSession project.
+
+' In Outlook, press Alt+F11 to open the VBA editor and expand Microsoft Outlook Objects then double click on ThisOutlookSession to open it in the editing pane and Ctrl+V to paste the code.
+
+' To use it you must first create a folder under your My Documents named OLAttachments (the code will not create it for you). Then select one or more messages and run the macro to save the attachments. You'll need to set macro security to warn before enabling macros or sign the macro. You can change the folder name or path where the attachments are saved by editing the code.
+
 Public Sub SaveAttachments()
 Dim objOL As Outlook.Application
 Dim objMsg As Outlook.MailItem 'Object
