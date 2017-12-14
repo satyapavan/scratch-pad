@@ -5,3 +5,5 @@ items from here and there, vb scripts, bashrc, vimrc and what not
 
 2.[**bashrc**](
 https://github.com/satyapavan/scratch-pad/blob/master/bashrc) - My favourite collection of bashrc settings
+
+
