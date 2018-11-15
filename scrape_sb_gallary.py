@@ -5,11 +5,11 @@ from multiprocessing.dummy import Pool as ThreadPool
 
 ###################################################################################
 
-#path = "H:\\coding\\git\\scratch-pad\\pics\\"
 path = "pics\\"
 
 PAGE_DEPTH_PER_CELEB=15
 PAGE_DEPTH=5
+NO_OF_THREADS=5
 
 base_url = 'http://www.santabanta.com'
 gallary_page = 'http://www.santabanta.com/images/parent/2/?page='
@@ -97,7 +97,7 @@ def fetch_all_pages():
 def start_processing():    
     arr_of_celebs=fetch_all_pages()
     
-    pool = ThreadPool(3)
+    pool = ThreadPool(NO_OF_THREADS)
     results = pool.map(download_celeb_top, arr_of_celebs)
 
     # close the pool and wait for the work to finish 
