@@ -32,7 +32,9 @@ def get_title_webpage(title_id):
     return bs
 
 def get_title_poster_webpage(bs):
-    """Given a BeautifulSoup object of a title's IMDb webpage this function will     return the url for its poster."""
+    """Given a BeautifulSoup object of a title's IMDb webpage this function will  return the page for its poster.
+    This is required as the poster on the previous page is smaller in resolution when compared to this"""
+    
 
     # Extract poster link
     data = bs.find('a',{'class':'ipc-lockup-overlay'})
@@ -49,7 +51,7 @@ def get_title_poster_webpage(bs):
   
  
 def get_title_poster_url(bs):
-    """Given a BeautifulSoup object of a title's IMDb webpage this function will
+    """Given a BeautifulSoup object of a posters media page this function will
     return the url for its poster."""
 
     # Extract poster link
@@ -59,6 +61,7 @@ def get_title_poster_url(bs):
     return poster_link
 
 def save_image(file_name, image_link):
+    """Given the URL of the image, this will download the image do our disk"""
     #print("Entering into save_image:", image_link )
 
     s = os.path.join(path, file_name)
@@ -70,6 +73,8 @@ def save_image(file_name, image_link):
     output.close()
 
 def sleeper():
+    """ You do not want to throttle them with API calls. Hence add a random pause so that items are positioned across time lines"""
+    
     val = random.randint(1,5)
     print("Sleeping for [{0}] seconds".format(val))
     time.sleep(val)
